@@ -10,4 +10,4 @@ if "%*" == "" (
 
 popd
 
-exit %ERRORLEVEL%
+exit /b %ERRORLEVEL%
