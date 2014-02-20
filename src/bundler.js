@@ -464,8 +464,8 @@ function compileAsync(options, mode, compileFn /*compileFn(text, textPath, cb(co
         },
         function (exists) {
             var next = this;
-            if (!exists)
-                next(!exists);
+            if (!exists || "minifying" != mode)
+                next(true);
             else
                 fs.stat(textPath, function (_, textStat) {
                     fs.stat(compileTextPath, function (_, minTextStat) {
